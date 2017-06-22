@@ -51,23 +51,24 @@ google_analytics:
 
 # Paginas
 pages:
-    - 'Home': 'index.md'
-    - 'Sobre' : 'sobre.md'
-    - 'Estudos':
-      - 'Python': 'estudos/python.md'
-      - 'Django': 'estudos/django.md'
-      - 'AngularJS': 'estudos/angularjs.md'
-      - 'Angular': 'sistemas/angular.md'
-    - 'Tutoriais':
-      - 'Django':
-        - 'Projeto Heroku': 'tutoriais/django/heroku.md'
-        - 'Rest Framework': 'tutoriais/django/rest_framework.md'
-      - 'AngularJS': 
-        - 'Snippets Sublime': 'tutoriais/angularjs/snippets_sublime.md'
-        - 'Snippets VSCode': 'tutoriais/angularjs/snippets_vscode.md'
-        - 'UI - Router': 'tutoriais/angularjs/ui_router.md'
-      - 'Oracle':
-        - 'Backup': 'tutoriais/oracle/backup.md'
-        - 'Import': 'tutoriais/oracle/import.md'
-        - 'Connect': 'tutoriais/oracle/connect.md'
-    # hidden pages
+  - 'Home': 'index.md'
+  # - 'Sobre' : 'sobre.md'
+  # - 'Estudos':
+  #   - 'Python': 'estudos/python.md'
+  #   - 'Django': 'estudos/django.md'
+  #   - 'AngularJS': 'estudos/angularjs.md'
+  #   - 'Angular': 'estudos/angular.md'
+  - 'Tutoriais':
+    - 'Django':
+      - 'Projeto Heroku': 'tutoriais/django/heroku.md'
+      - 'Rest Framework': 'tutoriais/django/rest_framework.md'
+      # - 'JET Admin': 'tutoriais/django/jet_admin.md'
+    # - 'AngularJS': 
+    #   - 'Snippets Sublime': 'tutoriais/angularjs/snippets_sublime.md'
+    #   - 'Snippets VSCode': 'tutoriais/angularjs/snippets_vscode.md'
+    #   - 'UI - Router': 'tutoriais/angularjs/ui_router.md'
+    # - 'Oracle':
+    #   - 'Backup': 'tutoriais/oracle/backup.md'
+    #   - 'Import': 'tutoriais/oracle/import.md'
+    #   - 'Connect': 'tutoriais/oracle/connect.md'
+
