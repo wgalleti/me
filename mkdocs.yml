@@ -1,0 +1,73 @@
+# Informações do Projeto
+site_name: wGalletiDocs
+site_description: 'William Galleti Docs'
+site_author: 'William Galleti'
+site_url: 'http://wGalleti.io/docs'
+
+# Documentos e Temas
+docs_dir: 'docs'
+theme : 'material'
+
+# Copyright
+copyright: '© 2017 wGalleti'
+
+# Opções
+extra:
+  palette:
+    primary: 'indigo'
+    accent: 'light blue'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  i18n:
+    prev: 'Anterior'
+    next: 'Próximo'
+  feature:
+    tabs: true
+  social:
+    - type: 'github'
+      link: 'https://github.com/wGalleti'
+    - type: 'twitter'
+      link: 'https://twitter.com/wGalleti'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/in/william-galleti-6b97a833/'
+
+# Extensions
+markdown_extensions:
+  - codehilite:
+      css_class: code
+      linenums: True
+      guess_lang: True
+      pygments_style: friendly
+      noclasses: True
+  - admonition
+  - toc:
+      permalink: '«'
+
+# Google Analytics
+google_analytics:
+  - 'UA-620975-4'
+  - 'auto'
+
+# Paginas
+pages:
+    - 'Home': 'index.md'
+    - 'Sobre' : 'sobre.md'
+    - 'Estudos':
+      - 'Python': 'estudos/python.md'
+      - 'Django': 'estudos/django.md'
+      - 'AngularJS': 'estudos/angularjs.md'
+      - 'Angular': 'sistemas/angular.md'
+    - 'Tutoriais':
+      - 'Django':
+        - 'Projeto Heroku': 'tutoriais/django/heroku.md'
+        - 'Rest Framework': 'tutoriais/django/rest_framework.md'
+      - 'AngularJS': 
+        - 'Snippets Sublime': 'tutoriais/angularjs/snippets_sublime.md'
+        - 'Snippets VSCode': 'tutoriais/angularjs/snippets_vscode.md'
+        - 'UI - Router': 'tutoriais/angularjs/ui_router.md'
+      - 'Oracle':
+        - 'Backup': 'tutoriais/oracle/backup.md'
+        - 'Import': 'tutoriais/oracle/import.md'
+        - 'Connect': 'tutoriais/oracle/connect.md'
+    # hidden pages
