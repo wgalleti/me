@@ -2,6 +2,9 @@
 
 Vamos instalar um servidor ubuntu 16.10 para hospedar páginas web desenvolvidas em python com framework django.
 
+!!! note ""
+    Revisado e testado em 2017-06-28
+
 ## Atulização e pequenas correções
 
 Antes de começar, vamos resolver o problema de linguagem da versão 16.10
@@ -65,7 +68,10 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 ## Preparando o servidor
 
-**Com usuário deploy** `:::bash su - deploy`, efetue as configurações de rede para adicionar o endereço de IP do servidor.
+!!! note "Troque o usuário"
+    As configurações abaixo poderão ser feitas com usuário **deploy** pois o mesmo foi criado como adminitrador!!!
+
+Efetue as configurações de rede para adicionar o endereço de IP do servidor.
 
 Primeiro, vamos preparar o ambiente de rede. Para isso, vamos determinar o endereço de IP no arquivo `/etc/host`
 
@@ -75,7 +81,7 @@ Primeiro, vamos preparar o ambiente de rede. Para isso, vamos determinar o ender
 192.168.0.IP    nome_do_server
 ```
 
-Agora vamos registrar o dominio de busca para que procure na rede interna, alterando o arquivo `/etc/resolvconf/resolv.conf.d/base`
+Agora vamos registrar o dominio de busca para que procure na rede interna, alterando o arquivo `sudo nano /etc/resolvconf/resolv.conf.d/base`
 
 ```
 search domain_name.com
@@ -85,11 +91,12 @@ Agora rode o comando para aplicar as resoluções `sudo resolvconf -u`
 
 Vamos reiniciar os serviços de rede e efetuar os testes
 
-`sudo /etc/init.d/networking restart`
+```bash
+sudo /etc/init.d/networking restart
 
-`nslookup nome_do_server`
-
-`nslookup nome_do_server.domain_name.com`
+nslookup nome_do_server
+nslookup nome_do_server.domain_name.com
+```
 
 ## Primeiro o GIT
 
@@ -114,12 +121,12 @@ Copie a chave (`cat ~/.ssh/id_rsa.pub`) para configuração de SSH na sua conta 
 
 Para instalar o oracle, baixe os arquivos do oracle.com (instant_client linux_x64_x86 .rpm)
 
-```bash
-oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm
-oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm
-oracle-instantclient11.2-jdbc-11.2.0.4.0-1.x86_64.rpm
-oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm
-```
+!!! info "Link para download"
+    * [oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm](http://download.oracle.com/otn/linux/instantclient/11204/oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm)
+    * [oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm](http://download.oracle.com/otn/linux/instantclient/11204/oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm)
+    * [oracle-instantclient11.2-jdbc-11.2.0.4.0-1.x86_64.rpm](http://download.oracle.com/otn/linux/instantclient/11204/oracle-instantclient11.2-jdbc-11.2.0.4.0-1.x86_64.rpm)
+    * [oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm](http://download.oracle.com/otn/linux/instantclient/11204/oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm)
+
 
 Vamos utilizar o `alien` para efetuar a instalação (`sudo apt-get install alien`)
 
@@ -328,12 +335,69 @@ Para isso, adicione abaixo do comando `Listen 80` o comando `Listen 8000` no arq
 
 ## Ultimos ajustes
 
+### Permissões
+
 Edite o arquivo `sudo nano /etc/group` e efetue as sequintes alterações
 
 Onde estiver `www-data:x:33:` ficara `www-data:x:33:deploy`
 
 Onde estiver  `deploy:x:1001:` ficara `deploy:x:1001:www-data`
 
+### Variáveis
+
+Para o apache poder interpretar as libs do `oracle_client` é nessário informar no arquivo `/etc/apache2/envvars` as variáveis do *oracle*
+
+```bash hl_lines="5 6 7 8"
+# envvars - default environment variables for apache2ctl
+
+...
+
+export ORACLE_HOME=/usr/lib/oracle/11.2/client64/
+export LD_LIBRARY_PATH=/usr/lib/oracle/11.2/client64/lib
+export PATH=$PATH:$ORACLE_HOME/bin
+export TNS_ADMIN=$ORACLE_HOME/network/admin
+```
+
 Reinicie o apache `sudo /etc/init.d/apache2 restart`
 
-**Feito isso, site funcionando**
+
+## Extras
+
+Para facilitar a utilização das ferramentas, vamos implementar as seguintes configurações no arquivo profile `~/.profile`
+
+```bash
+# Alias
+alias active='source .venv/bin/activate' # ativar vitualenv
+alias deactive='source ~/.profile' # desativar virutalenv
+alias manage='python $VIRTUAL_ENV/../manage.py' # chamar somente manage ao invés de python manage.py
+alias sqlplus='rlwrap sqlplus' # poder utilizar ultimos comandos no sqlplus
+```
+
+Efetuar as seguintes instalações `:::bash sudo apt-get install rlwrap nmon htop`
+
+### NMON e HTOP
+
+Vamos utilizar essas ferramentas para monitoramento do sistema operacional.
+
+O Htop, podemos analisar desempenho de processador, memória e listar e dar manutenção de forma bem simples os processo do SO.
+
+O Nmon, temos as mesmas analises do Htop, mais analise de discos, redes e etc. Não é possivel eliminar processos!
+
+### Comandos uteis
+
+#### Reiniciar apache
+`sudo service apache2 restart`
+
+#### Limpara memoria cache
+
+!!! success ""
+    Não é necessário reiniciar o micro!!!
+
+```bash
+echo 3 > /proc/sys/vm/drop_caches
+sysctl -w vm.drop_caches=3
+```
+
+#### Acompanhar log de erros do apache
+`tail -f /var/log/apache2/error.log`
+
