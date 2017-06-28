@@ -17,11 +17,8 @@ extra:
     primary: 'indigo'
     accent: 'light blue'
   font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
-  i18n:
-    prev: 'Anterior'
-    next: 'Próximo'
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
   feature:
     tabs: true
   social:
@@ -34,20 +31,24 @@ extra:
 
 # Extensions
 markdown_extensions:
-  - codehilite:
-      css_class: code
-      linenums: True
-      guess_lang: True
-      pygments_style: friendly
-      noclasses: True
   - admonition
-  - toc:
-      permalink: '«'
-
-# Google Analytics
-google_analytics:
-  - 'UA-620975-4'
-  - 'auto'
+  - codehilite(guess_lang=false,linenums=true)
+  - toc(permalink=true)
+  - footnotes
+  - meta
+  - pymdownx.arithmatex
+  - pymdownx.betterem(smart_enable=all)
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist(custom_checkbox=true)
+  - pymdownx.tilde
 
 # Paginas
 pages:
@@ -60,6 +61,8 @@ pages:
   #   - 'Angular': 'estudos/angular.md'
   - 'Tutoriais':
     - 'Django':
+      - 'Server':
+        - 'Ubuntu Apache': 'tutoriais/django/server/ubuntu_apache.md'
       - 'Projeto Heroku': 'tutoriais/django/heroku.md'
       - 'Rest Framework': 'tutoriais/django/rest_framework.md'
       # - 'JET Admin': 'tutoriais/django/jet_admin.md'
