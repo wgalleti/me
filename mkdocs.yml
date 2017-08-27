@@ -60,6 +60,10 @@ pages:
   #   - 'AngularJS': 'estudos/angularjs.md'
   #   - 'Angular': 'estudos/angular.md'
   - 'Tutoriais':
+    - 'JS':
+      - 'Arrays Uteis': 'tutoriais/javascript/arrays.md'
+    - 'Angular':
+      - 'Coisas uteis': 'tutoriais/angular/index.md'
     - 'Django':
       - 'Server':
         - 'Ubuntu Apache': 'tutoriais/django/server/ubuntu_apache.md'
