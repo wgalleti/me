@@ -197,7 +197,7 @@ Antes de começar, instale o heroku client para utilizar os comandos.
 Vamos criar e configurar o app:
 
 ```bash
-heroku create %nomeprojeto
+heroku create %nomeprojeto --buildpack heroku/python
 heroku config:set SECRET_KEY='CHAVE QUE ESTA NO .env'
 heroku config:set DEBUG=False
 ```
