@@ -66,9 +66,11 @@ pages:
       - 'Coisas uteis': 'tutoriais/angular/index.md'
     - 'Django':
       - 'Server':
+        - 'Ubuntu Nginx': 'tutoriais/django/server/ubuntu_nginx.md'
         - 'Ubuntu Apache': 'tutoriais/django/server/ubuntu_apache.md'
       - 'Projeto Heroku': 'tutoriais/django/heroku.md'
       - 'Rest Framework': 'tutoriais/django/rest_framework.md'
+      - 'Queries': 'tutoriais/django/queries.md'
       # - 'JET Admin': 'tutoriais/django/jet_admin.md'
     # - 'AngularJS': 
     #   - 'Snippets Sublime': 'tutoriais/angularjs/snippets_sublime.md'
