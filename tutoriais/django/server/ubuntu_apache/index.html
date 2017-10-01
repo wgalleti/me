@@ -1,0 +1,1321 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="William Galleti Docs">
+      
+      
+        <link rel="canonical" href="http://wGalleti.io/docs/tutoriais/django/server/ubuntu_apache/">
+      
+      
+        <meta name="author" content="William Galleti">
+      
+      
+        <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.4">
+    
+    
+      
+        <title>Ubuntu Apache - wGalletiDocs</title>
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr-1df76c4e58.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application-769c285a91.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-02c2a4388f.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="http://wGalleti.io/docs" title="wGalletiDocs" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Django
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Server
+                </span>
+              
+            
+            Ubuntu Apache
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../javascript/arrays/" title="Tutoriais" class="md-tabs__link">
+          Tutoriais
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    wGalletiDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Tutoriais
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Tutoriais
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      JS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        JS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../javascript/arrays/" title="Arrays Uteis" class="md-nav__link">
+      Arrays Uteis
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Angular
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Angular
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../angular/" title="Coisas uteis" class="md-nav__link">
+      Coisas uteis
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Django
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Django
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-1" type="checkbox" id="nav-2-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-3-1">
+      Server
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-3-1">
+        Server
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ubuntu_nginx/" title="Ubuntu Nginx" class="md-nav__link">
+      Ubuntu Nginx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Ubuntu Apache
+      </label>
+    
+    <a href="./" title="Ubuntu Apache" class="md-nav__link md-nav__link--active">
+      Ubuntu Apache
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#atulizacao-e-pequenas-correcoes" title="Atulização e pequenas correções" class="md-nav__link">
+    Atulização e pequenas correções
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuarios" title="Usuários" class="md-nav__link">
+    Usuários
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparando-o-servidor" title="Preparando o servidor" class="md-nav__link">
+    Preparando o servidor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primeiro-o-git" title="Primeiro o GIT" class="md-nav__link">
+    Primeiro o GIT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oracle-client" title="Oracle Client" class="md-nav__link">
+    Oracle Client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript" title="JavaScript" class="md-nav__link">
+    JavaScript
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-e-virtualenv" title="Python e VirtualENV" class="md-nav__link">
+    Python e VirtualENV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache" title="Apache" class="md-nav__link">
+    Apache
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacao" title="Instalação" class="md-nav__link">
+    Instalação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracao" title="Configuração" class="md-nav__link">
+    Configuração
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ultimos-ajustes" title="Ultimos ajustes" class="md-nav__link">
+    Ultimos ajustes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permissoes" title="Permissões" class="md-nav__link">
+    Permissões
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaveis" title="Variáveis" class="md-nav__link">
+    Variáveis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extras" title="Extras" class="md-nav__link">
+    Extras
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmon-e-htop" title="NMON e HTOP" class="md-nav__link">
+    NMON e HTOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-uteis" title="Comandos uteis" class="md-nav__link">
+    Comandos uteis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reiniciar-apache" title="Reiniciar apache" class="md-nav__link">
+    Reiniciar apache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpara-memoria-cache" title="Limpara memoria cache" class="md-nav__link">
+    Limpara memoria cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acompanhar-log-de-erros-do-apache" title="Acompanhar log de erros do apache" class="md-nav__link">
+    Acompanhar log de erros do apache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../heroku/" title="Projeto Heroku" class="md-nav__link">
+      Projeto Heroku
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rest_framework/" title="Rest Framework" class="md-nav__link">
+      Rest Framework
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../queries/" title="Queries" class="md-nav__link">
+      Queries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#atulizacao-e-pequenas-correcoes" title="Atulização e pequenas correções" class="md-nav__link">
+    Atulização e pequenas correções
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuarios" title="Usuários" class="md-nav__link">
+    Usuários
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparando-o-servidor" title="Preparando o servidor" class="md-nav__link">
+    Preparando o servidor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primeiro-o-git" title="Primeiro o GIT" class="md-nav__link">
+    Primeiro o GIT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oracle-client" title="Oracle Client" class="md-nav__link">
+    Oracle Client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript" title="JavaScript" class="md-nav__link">
+    JavaScript
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-e-virtualenv" title="Python e VirtualENV" class="md-nav__link">
+    Python e VirtualENV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache" title="Apache" class="md-nav__link">
+    Apache
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacao" title="Instalação" class="md-nav__link">
+    Instalação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracao" title="Configuração" class="md-nav__link">
+    Configuração
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ultimos-ajustes" title="Ultimos ajustes" class="md-nav__link">
+    Ultimos ajustes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permissoes" title="Permissões" class="md-nav__link">
+    Permissões
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaveis" title="Variáveis" class="md-nav__link">
+    Variáveis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extras" title="Extras" class="md-nav__link">
+    Extras
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmon-e-htop" title="NMON e HTOP" class="md-nav__link">
+    NMON e HTOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-uteis" title="Comandos uteis" class="md-nav__link">
+    Comandos uteis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reiniciar-apache" title="Reiniciar apache" class="md-nav__link">
+    Reiniciar apache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpara-memoria-cache" title="Limpara memoria cache" class="md-nav__link">
+    Limpara memoria cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acompanhar-log-de-erros-do-apache" title="Acompanhar log de erros do apache" class="md-nav__link">
+    Acompanhar log de erros do apache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ubuntu-1610-apache2-python-wsgi-oracle">Ubuntu 16.10 + Apache2 + Python + WSGI + Oracle<a class="headerlink" href="#ubuntu-1610-apache2-python-wsgi-oracle" title="Permanent link">&para;</a></h1>
+<p>Vamos instalar um servidor ubuntu 16.10 para hospedar páginas web desenvolvidas em python com framework django.</p>
+<div class="admonition note">
+<p>Revisado e testado em 2017-06-28</p>
+</div>
+<h2 id="atulizacao-e-pequenas-correcoes">Atulização e pequenas correções<a class="headerlink" href="#atulizacao-e-pequenas-correcoes" title="Permanent link">&para;</a></h2>
+<p>Antes de começar, vamos resolver o problema de linguagem da versão 16.10</p>
+<p>Como <strong>root</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>apt-get install language-pack-pt
+locale-gen pt_BR.UTF-8
+reboot
+</pre></div>
+</td></tr></table>
+
+<p>Vamos efetuar as atualizações</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>apt-get update
+apt-get upgrade
+apt-get dist-upgrade
+</pre></div>
+</td></tr></table>
+
+<h2 id="usuarios">Usuários<a class="headerlink" href="#usuarios" title="Permanent link">&para;</a></h2>
+<p>Agora criamos o usuário <code>deploy</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>useradd -m -d /home/deploy -G adm,www-data,sudo -s /bin/bash deploy
+passwd deploy
+</pre></div>
+</td></tr></table>
+
+<p>Só para confirmar, verifique em <code>/etc/passwd</code> se ficou dessa forma</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>deploy:x:1001:1001::/home/deploy:/bin/bash
+</pre></div>
+</td></tr></table>
+
+<p>Agora edite o arquivo <code>nano /home/deploy/.profile</code> e verifique se existe as seguinte informações</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># ~/.profile: executed by the command interpreter for login shells.</span>
+<span class="c1"># This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login</span>
+<span class="c1"># exists.</span>
+<span class="c1"># see /usr/share/doc/bash/examples/startup-files for examples.</span>
+<span class="c1"># the files are located in the bash-doc package.</span>
+
+<span class="c1"># the default umask is set in /etc/profile; for setting the umask</span>
+<span class="c1"># for ssh logins, install and configure the libpam-umask package.</span>
+<span class="c1">#umask 022</span>
+
+<span class="hll"><span class="c1"># if running bash</span>
+</span><span class="hll"><span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$BASH_VERSION</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span><span class="hll">    <span class="c1"># include .bashrc if it exists</span>
+</span><span class="hll">    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.bashrc&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span><span class="hll">        . <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.bashrc&quot;</span>
+</span><span class="hll">    <span class="k">fi</span>
+</span><span class="hll"><span class="k">fi</span>
+</span>
+<span class="c1"># set PATH so it includes user&#39;s private bin directories</span>
+<span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="preparando-o-servidor">Preparando o servidor<a class="headerlink" href="#preparando-o-servidor" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Troque o usuário</p>
+<p>As configurações abaixo poderão ser feitas com usuário <strong>deploy</strong> pois o mesmo foi criado como adminitrador!!!</p>
+</div>
+<p>Efetue as configurações de rede para adicionar o endereço de IP do servidor.</p>
+<p>Primeiro, vamos preparar o ambiente de rede. Para isso, vamos determinar o endereço de IP no arquivo <code>/etc/host</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>127.0.0.1       localhost
+127.0.1.1       nome_do_server
+192.168.0.IP    nome_do_server
+</pre></div>
+</td></tr></table>
+
+<p>Agora vamos registrar o dominio de busca para que procure na rede interna, alterando o arquivo <code>sudo nano /etc/resolvconf/resolv.conf.d/base</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>search domain_name.com
+</pre></div>
+</td></tr></table>
+
+<p>Agora rode o comando para aplicar as resoluções <code>sudo resolvconf -u</code></p>
+<p>Vamos reiniciar os serviços de rede e efetuar os testes</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo /etc/init.d/networking restart
+
+nslookup nome_do_server
+nslookup nome_do_server.domain_name.com
+</pre></div>
+</td></tr></table>
+
+<h2 id="primeiro-o-git">Primeiro o GIT<a class="headerlink" href="#primeiro-o-git" title="Permanent link">&para;</a></h2>
+<p>Para instalar o git rode o comando <code>sudo apt-get install git</code></p>
+<p>Após isso, vamos efetuar a configuração das variáveis globais</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git config --global user.name <span class="s2">&quot;Seu Nome&quot;</span>
+git config --global user.email <span class="s2">&quot;seuemail@domain.com&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Agora vamos adicionar uma chave publica para poder efetuar interação com os projetos</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ssh-keygen -t rsa -C <span class="s2">&quot;email@domain&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Copie a chave (<code>cat ~/.ssh/id_rsa.pub</code>) para configuração de SSH na sua conta no repositório online</p>
+<h2 id="oracle-client">Oracle Client<a class="headerlink" href="#oracle-client" title="Permanent link">&para;</a></h2>
+<p>Para instalar o oracle, baixe os arquivos do oracle.com (instant_client linux_x64_x86 .rpm)</p>
+<div class="admonition info">
+<p class="admonition-title">Link para download</p>
+<ul>
+<li><a href="http://download.oracle.com/otn/linux/instantclient/11204/oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm">oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm</a></li>
+<li><a href="http://download.oracle.com/otn/linux/instantclient/11204/oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm">oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm</a></li>
+<li><a href="http://download.oracle.com/otn/linux/instantclient/11204/oracle-instantclient11.2-jdbc-11.2.0.4.0-1.x86_64.rpm">oracle-instantclient11.2-jdbc-11.2.0.4.0-1.x86_64.rpm</a></li>
+<li><a href="http://download.oracle.com/otn/linux/instantclient/11204/oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm">oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm</a></li>
+</ul>
+</div>
+<p>Vamos utilizar o <code>alien</code> para efetuar a instalação (<code>sudo apt-get install alien</code>)</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install alien
+<span class="nb">cd</span> diretorio_dos_arquivos.rpm
+sudo alien -i oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm
+sudo alien -i oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm
+sudo alien -i oracle-instantclient11.2-jdbc-11.2.0.4.0-1.x86_64.rpm
+sudo alien -i oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm
+</pre></div>
+</td></tr></table>
+
+<p>Agora, vamos editar as variaveis de ambiente para configurar algumas coisas que o client do oracle necessita. <code>nano ~/.profile</code> e adicione as seguintes linhas no final do arquivo:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>...
+
+<span class="c1"># ORACLE</span>
+<span class="nb">export</span> <span class="nv">ORACLE_HOME</span><span class="o">=</span>/usr/lib/oracle/11.2/client64/
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/lib/oracle/11.2/client64/lib
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ORACLE_HOME</span>/bin
+<span class="nb">export</span> <span class="nv">TNS_ADMIN</span><span class="o">=</span><span class="nv">$ORACLE_HOME</span>/network/admin
+</pre></div>
+</td></tr></table>
+
+<p>Agora vamos efetuar as configurações com o comando <code>source ~/.profile</code></p>
+<p>Precisamos criar o diretório para os apelidos de rede (TNS_ADMIN). <code>sudo mkdir -p $TNS_ADMIN</code></p>
+<p>E por ultimo, precisamos criar o arquivo de tns (tnsnames.ora). <code>sudo touch $TNS_ADMIN/tnsnames.ora</code></p>
+<p>Edite o mesmo e cole os nomes de rede atuais</p>
+<p>Antes de rodar o <code>sqlplus</code>, precisamos instalar a dependencia do <code>libaio.so</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install libaio1 libaio-dev
+</pre></div>
+</td></tr></table>
+
+<h2 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h2>
+<p>Vamos instalar as dependencias para execuções dos javascripts</p>
+<p>Primeiro, vamos instalar o node</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install nodejs npm nodejs-legacy
+</pre></div>
+</td></tr></table>
+
+<p>Feito isso, vamos testar instando dois pacotes essênciais.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo npm i -g gulp bower
+</pre></div>
+</td></tr></table></p>
+<p>Verificando se esta tudo certo, rode:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bower -v
+gulp -v
+</pre></div>
+</td></tr></table>
+
+<h2 id="python-e-virtualenv">Python e VirtualENV<a class="headerlink" href="#python-e-virtualenv" title="Permanent link">&para;</a></h2>
+<p>Para não termos problemas de versões do sistema operacional, vamos utilizar o pyenv.</p>
+<p>Antes de prosseguir a instalação, precisamos instalar as seguintes dependências:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
+</pre></div>
+</td></tr></table>
+
+<p>Agora vamos efetuar a instalação do pyenv</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install git python-pip make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev
+pip install virtualenvwrapper
+
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.pyenv/plugins/pyenv-virtualenvwrapper
+
+<span class="nb">echo</span> <span class="s1">&#39;&#39;</span> &gt;&gt; ~/.profile
+<span class="nb">echo</span> <span class="s1">&#39;# PYENV&#39;</span> &gt;&gt; ~/.profile
+<span class="nb">echo</span> <span class="s1">&#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39;</span> &gt;&gt; ~/.profile
+<span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.profile
+<span class="nb">echo</span> <span class="s1">&#39;eval &quot;$(pyenv init -)&quot;&#39;</span> &gt;&gt; ~/.profile
+<span class="nb">echo</span> <span class="s1">&#39;pyenv virtualenvwrapper&#39;</span> &gt;&gt; ~/.profile
+<span class="nb">echo</span> <span class="s1">&#39;export WORKON_HOME=~/virtualenvs&#39;</span>&gt;&gt; ~/.profile
+</pre></div>
+</td></tr></table>
+
+<p>Atualize o arquivo com o comando <code>source ~/.profile</code> e vamos efetuar a instalação da versão 3.5.2 do python.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pyenv install <span class="m">3</span>.5.2
+
+pyenv versions
+* system <span class="o">(</span><span class="nb">set</span> by /root/.pyenv/version<span class="o">)</span>
+  <span class="m">3</span>.5.2
+</pre></div>
+</td></tr></table>
+
+<p>Para ativar a versão 3.5.2, vamos utilizar o comando <code>pyenv global 3.5.2</code></p>
+<p>Para verificar, utilize:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python -V
+Python <span class="m">3</span>.5.2
+</pre></div>
+</td></tr></table>
+
+<h2 id="apache">Apache<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h2>
+<p>Instalando o apache e configurando o module wsgi</p>
+<h3 id="instalacao">Instalação<a class="headerlink" href="#instalacao" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install apache2
+sudo apt-get install libapache2-mod-wsgi-py3
+<span class="nb">cd</span> /etc/apache2/mods-enabled/
+sudo ln -sf ../mods-available/wsgi.conf
+sudo ln -sf ../mods-available/wsgi.load
+</pre></div>
+</td></tr></table>
+
+<p>Reinicie o apache <code>sudo /etc/init.d/apache2 restart</code></p>
+<h3 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">&para;</a></h3>
+<p>Vamos configurar o o site do projeto (vou usar de exemplo a cotação web)</p>
+<p>Primeiro clonamos o projeto</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> ~/projects
+git clone git@gitlab.com:wGalleti/webCotacao.git
+</pre></div>
+</td></tr></table>
+
+<p>Agora que temos o caminho completo do projeto, <code>/home/deploy/projects/webCotacao</code>, vamos criar o virtualenv e configurar o os direcionamentos.</p>
+<p>Criando o virtualenv</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python -m venv .venv
+<span class="nb">source</span> .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+cp env_example .env
+python manage.py <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
+
+<p>Se tudo tiver ok, seu projeto está pronto.</p>
+<p>Agora vamos configurar o apache para servir essa pasta.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo nano /etc/apache2/sites-enabled/000-default.conf
+</pre></div>
+</td></tr></table>
+
+<p>Vamos deixar o arquivo da seguinte maneira, para servir os arquivos da api (na porta 8000)</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&lt;VirtualHost *:8000&gt;
+        Alias /static /home/deploy/projects/webCotacao/static
+        &lt;Directory /home/deploy/projects/webCotacao/static &gt;
+            Require all granted
+        &lt;/Directory&gt;
+
+        &lt;Directory /home/deploy/projects/webCotacao/cotacao &gt;
+            &lt;Files wsgi.py&gt;
+                Require all granted
+            &lt;/Files&gt;
+        &lt;/Directory&gt;
+
+        WSGIDaemonProcess cotacaoweb python-home=/home/deploy/projects/webCotacao/.venv python-path=/home/deploy/projects/webCotacao
+        WSGIPassAuthorization On
+        WSGIProcessGroup cotacaoweb
+        WSGIScriptAlias / /home/deploy/projects/webCotacao/cotacao/wsgi.py
+
+        ErrorLog ${APACHE_LOG_DIR}/error_api.log
+        CustomLog ${APACHE_LOG_DIR}/access_api.log combined
+
+&lt;/VirtualHost&gt;
+</pre></div>
+</td></tr></table>
+
+<p>E para servir os arquivos stativos (frontend), ficara da seguinte maneira (na porta 80)</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&lt;VirtualHost *:80&gt;
+        DocumentRoot /home/deploy/projects/webCotacao/frontend/dist
+
+        &lt;Directory /home/deploy/projects/webCotacao/frontend/dist&gt;
+            Options +Indexes
+            DirectoryIndex index.html
+            Require all granted
+        &lt;/Directory&gt;
+
+        ErrorLog ${APACHE_LOG_DIR}/error_site.log
+        CustomLog ${APACHE_LOG_DIR}/access_site.log combined
+
+&lt;/VirtualHost&gt;
+</pre></div>
+</td></tr></table>
+
+<p>Agora precisamos ativar a porta 8000 no apache.</p>
+<p>Para isso, adicione abaixo do comando <code>Listen 80</code> o comando <code>Listen 8000</code> no arquivo <code>/etc/apache2/ports.conf</code> e reinicie o apache <code>/etc/init.d/apache2 restart</code></p>
+<h2 id="ultimos-ajustes">Ultimos ajustes<a class="headerlink" href="#ultimos-ajustes" title="Permanent link">&para;</a></h2>
+<h3 id="permissoes">Permissões<a class="headerlink" href="#permissoes" title="Permanent link">&para;</a></h3>
+<p>Edite o arquivo <code>sudo nano /etc/group</code> e efetue as sequintes alterações</p>
+<p>Onde estiver <code>www-data:x:33:</code> ficara <code>www-data:x:33:deploy</code></p>
+<p>Onde estiver  <code>deploy:x:1001:</code> ficara <code>deploy:x:1001:www-data</code></p>
+<h3 id="variaveis">Variáveis<a class="headerlink" href="#variaveis" title="Permanent link">&para;</a></h3>
+<p>Para o apache poder interpretar as libs do <code>oracle_client</code> é nessário informar no arquivo <code>/etc/apache2/envvars</code> as variáveis do <em>oracle</em></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># envvars - default environment variables for apache2ctl</span>
+
+...
+
+<span class="hll"><span class="nb">export</span> <span class="nv">ORACLE_HOME</span><span class="o">=</span>/usr/lib/oracle/11.2/client64/
+</span><span class="hll"><span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/lib/oracle/11.2/client64/lib
+</span><span class="hll"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ORACLE_HOME</span>/bin
+</span><span class="hll"><span class="nb">export</span> <span class="nv">TNS_ADMIN</span><span class="o">=</span><span class="nv">$ORACLE_HOME</span>/network/admin
+</span></pre></div>
+</td></tr></table>
+
+<p>Reinicie o apache <code>sudo /etc/init.d/apache2 restart</code></p>
+<h2 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h2>
+<p>Para facilitar a utilização das ferramentas, vamos implementar as seguintes configurações no arquivo profile <code>~/.profile</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Alias</span>
+<span class="nb">alias</span> <span class="nv">active</span><span class="o">=</span><span class="s1">&#39;source .venv/bin/activate&#39;</span> <span class="c1"># ativar vitualenv</span>
+<span class="nb">alias</span> <span class="nv">deactive</span><span class="o">=</span><span class="s1">&#39;source ~/.profile&#39;</span> <span class="c1"># desativar virutalenv</span>
+<span class="nb">alias</span> <span class="nv">manage</span><span class="o">=</span><span class="s1">&#39;python $VIRTUAL_ENV/../manage.py&#39;</span> <span class="c1"># chamar somente manage ao invés de python manage.py</span>
+<span class="nb">alias</span> <span class="nv">sqlplus</span><span class="o">=</span><span class="s1">&#39;rlwrap sqlplus&#39;</span> <span class="c1"># poder utilizar ultimos comandos no sqlplus</span>
+</pre></div>
+</td></tr></table>
+
+<p>Efetuar as seguintes instalações <code class="codehilite">sudo apt-get install rlwrap nmon htop</code></p>
+<h3 id="nmon-e-htop">NMON e HTOP<a class="headerlink" href="#nmon-e-htop" title="Permanent link">&para;</a></h3>
+<p>Vamos utilizar essas ferramentas para monitoramento do sistema operacional.</p>
+<p>O Htop, podemos analisar desempenho de processador, memória e listar e dar manutenção de forma bem simples os processo do SO.</p>
+<p>O Nmon, temos as mesmas analises do Htop, mais analise de discos, redes e etc. Não é possivel eliminar processos!</p>
+<h3 id="comandos-uteis">Comandos uteis<a class="headerlink" href="#comandos-uteis" title="Permanent link">&para;</a></h3>
+<h4 id="reiniciar-apache">Reiniciar apache<a class="headerlink" href="#reiniciar-apache" title="Permanent link">&para;</a></h4>
+<p><code>sudo service apache2 restart</code></p>
+<h4 id="limpara-memoria-cache">Limpara memoria cache<a class="headerlink" href="#limpara-memoria-cache" title="Permanent link">&para;</a></h4>
+<div class="admonition success">
+<p>Não é necessário reiniciar o micro!!!</p>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="m">3</span> &gt; /proc/sys/vm/drop_caches
+sysctl -w vm.drop_caches<span class="o">=</span><span class="m">3</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="acompanhar-log-de-erros-do-apache">Acompanhar log de erros do apache<a class="headerlink" href="#acompanhar-log-de-erros-do-apache" title="Permanent link">&para;</a></h4>
+<p><code>tail -f /var/log/apache2/error.log</code></p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ubuntu_nginx/" title="Ubuntu Nginx" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Ubuntu Nginx
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../heroku/" title="Projeto Heroku" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Projeto Heroku
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © 2017 wGalleti
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/wGalleti" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/wGalleti" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/william-galleti-6b97a833/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application-c35428f87f.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../../../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

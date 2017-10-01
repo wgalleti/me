@@ -1,0 +1,951 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="William Galleti Docs">
+      
+      
+        <link rel="canonical" href="http://wGalleti.io/docs/tutoriais/django/heroku/">
+      
+      
+        <meta name="author" content="William Galleti">
+      
+      
+        <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.4">
+    
+    
+      
+        <title>Projeto Heroku - wGalletiDocs</title>
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr-1df76c4e58.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-769c285a91.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-02c2a4388f.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="http://wGalleti.io/docs" title="wGalletiDocs" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Tutoriais
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Django
+                </span>
+              
+            
+            Projeto Heroku
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../javascript/arrays/" title="Tutoriais" class="md-tabs__link">
+          Tutoriais
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    wGalletiDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Tutoriais
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Tutoriais
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      JS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        JS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/arrays/" title="Arrays Uteis" class="md-nav__link">
+      Arrays Uteis
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Angular
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Angular
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../angular/" title="Coisas uteis" class="md-nav__link">
+      Coisas uteis
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Django
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Django
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-1" type="checkbox" id="nav-2-3-1">
+    
+    <label class="md-nav__link" for="nav-2-3-1">
+      Server
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-3-1">
+        Server
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../server/ubuntu_nginx/" title="Ubuntu Nginx" class="md-nav__link">
+      Ubuntu Nginx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../server/ubuntu_apache/" title="Ubuntu Apache" class="md-nav__link">
+      Ubuntu Apache
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Projeto Heroku
+      </label>
+    
+    <a href="./" title="Projeto Heroku" class="md-nav__link md-nav__link--active">
+      Projeto Heroku
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparacao-do-ambiente" title="Preparação do ambiente" class="md-nav__link">
+    Preparação do ambiente
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detalhando-as-dependencias" title="Detalhando as dependências" class="md-nav__link">
+    Detalhando as dependências
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inicando-o-projeto" title="Inicando o projeto" class="md-nav__link">
+    Inicando o projeto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracoes-do-projeto" title="Configurações do Projeto:" class="md-nav__link">
+    Configurações do Projeto:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracoes-do-heroku" title="Configurações do Heroku:" class="md-nav__link">
+    Configurações do Heroku:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-projeto-no-heroku" title="Criando projeto no Heroku" class="md-nav__link">
+    Criando projeto no Heroku
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusao" title="Conclusão" class="md-nav__link">
+    Conclusão
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agradecimento" title="Agradecimento" class="md-nav__link">
+    Agradecimento
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rest_framework/" title="Rest Framework" class="md-nav__link">
+      Rest Framework
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../queries/" title="Queries" class="md-nav__link">
+      Queries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparacao-do-ambiente" title="Preparação do ambiente" class="md-nav__link">
+    Preparação do ambiente
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detalhando-as-dependencias" title="Detalhando as dependências" class="md-nav__link">
+    Detalhando as dependências
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inicando-o-projeto" title="Inicando o projeto" class="md-nav__link">
+    Inicando o projeto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracoes-do-projeto" title="Configurações do Projeto:" class="md-nav__link">
+    Configurações do Projeto:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracoes-do-heroku" title="Configurações do Heroku:" class="md-nav__link">
+    Configurações do Heroku:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criando-projeto-no-heroku" title="Criando projeto no Heroku" class="md-nav__link">
+    Criando projeto no Heroku
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusao" title="Conclusão" class="md-nav__link">
+    Conclusão
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agradecimento" title="Agradecimento" class="md-nav__link">
+    Agradecimento
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="criando-projeto-django-e-enviando-para-o-heroku">Criando Projeto django e enviando para o HEROKU<a class="headerlink" href="#criando-projeto-django-e-enviando-para-o-heroku" title="Permanent link">&para;</a></h1>
+<p>Vamos criar um projeto simples para ser utilizado com o heroku.</p>
+<h2 id="preparacao-do-ambiente">Preparação do ambiente<a class="headerlink" href="#preparacao-do-ambiente" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Utilizando python 3.5.2</p>
+</div>
+<ol>
+<li>Crie o diretorio para o projeto e entre no mesmo <code>mkdir %nomeprojeto &amp; cd $_</code></li>
+<li>Criar o ambiente virtual <code>python -m venv .venv</code></li>
+<li>Ativar ambiente <code>source .venv/bin/activate</code></li>
+<li>Atualizar pip <code>pip install --upgrade pip</code></li>
+<li>Instalar dependencias <code>pip install django dj-database-url dj-static python-decouple gunicorn psycopg2</code></li>
+</ol>
+<h3 id="detalhando-as-dependencias">Detalhando as dependências<a class="headerlink" href="#detalhando-as-dependencias" title="Permanent link">&para;</a></h3>
+<ul>
+<li>django: Framework para desenvolvimento web</li>
+<li>dj-database-url: Módulo para converter string de conexão em url</li>
+<li>dj-static: Módulo para servir arquivos estáticos</li>
+<li>python-decouple: Módulo que ajuda na parte de seguraça da aplicação (utilizar parametros via arquivo .env)</li>
+<li>gunicorn: Servidor web</li>
+<li>psycopg2: Módulo de acesso ao postgres</li>
+</ul>
+<h2 id="inicando-o-projeto">Inicando o projeto<a class="headerlink" href="#inicando-o-projeto" title="Permanent link">&para;</a></h2>
+<p>Após o ambiente preparado, vamos iniciar o projeto.<br />
+Primeiro, vamos salvar os módulos que nosso projeto necessita:<br />
+<code>pip freeze &gt; requirements.txt</code></p>
+<p>Após isso, vamos criar nosso projeto:<br />
+<code>django-admin startproject %nomeprojeto .</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Utilizo o ponto para não criar subpasta no projeto!!!</p>
+</div>
+<h3 id="configuracoes-do-projeto">Configurações do Projeto:<a class="headerlink" href="#configuracoes-do-projeto" title="Permanent link">&para;</a></h3>
+<p>Primeiro, vamos ao arquivo <code>settings.py</code>. Nele, iremos informar as chaves do projeto, conexão de banco de dados, caminhos, etc.</p>
+<p>Para aumentar a segurança, e remover desse arquivo dados de senha e chave, vamos utilizar o decouple. Para isso vamos criar o arquivo <code>.env</code> na raiz do projeto.</p>
+<p>Nele vamos informar os seguintes itens:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SECRET_KEY=***********************************(Copiar do seu settings.py)
+DEBUG=True
+</pre></div>
+</td></tr></table>
+
+<p>Agora dentro do nosso <code>setting.py</code>, vamos efetuar os imports do decouple e dj-database-url, logo após o <code>import os</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">decouple</span> <span class="kn">import</span> <span class="n">config</span>
+<span class="kn">from</span> <span class="nn">dj_database_url</span> <span class="kn">import</span> <span class="n">parse</span> <span class="k">as</span> <span class="n">dburl</span>
+</pre></div>
+</td></tr></table>
+
+<p>Agora vamos configurar nosso <code>SECRET_KEY</code> e <code>DEBUG</code> para buscar as informações do arquivo <code>.env</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># SECURITY WARNING: keep the secret key used in production secret!</span>
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">config</span><span class="p">(</span><span class="s1">&#39;SECRET_KEY&#39;</span><span class="p">)</span>
+
+<span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="n">DEBUG</span> <span class="o">=</span> <span class="n">config</span><span class="p">(</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">cast</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>Em desenvolvimento, vamos usar o <code>sqlite</code>, então para configurá-lo, vamos criar uma variável, passando o valor padrão para caso não houver informações de conexão no arquivo <code>.env</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Database</span>
+<span class="c1"># https://docs.djangoproject.com/en/1.10/ref/settings/#databases</span>
+<span class="n">default_db_url</span> <span class="o">=</span> <span class="s1">&#39;sqlite:///&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;db.sqlite3&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>A nossa string de conexão, irá ficar dessa forma:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">(</span><span class="s1">&#39;DATABASE_URL&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default_db_url</span><span class="p">,</span> <span class="n">cast</span><span class="o">=</span><span class="n">dburl</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>Agora vamos efetuar algumas outras configurações importantes como hosts permitidos para acessar, linguagem, timezone, local dos arquivos staticos e etc.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># hosts</span>
+<span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;*&#39;</span>
+<span class="p">]</span>
+<span class="c1"># tradução</span>
+<span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;pt-br&#39;</span>
+<span class="c1"># timestamp</span>
+<span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;America/Cuiaba&#39;</span>
+<span class="c1"># desativa timezone</span>
+<span class="n">USE_TZ</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="c1"># diretorio de arquivos staticos</span>
+<span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;staticfiles&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>Por ultimo, vamos informar as configurações de email:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Email</span>
+<span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="s1">&#39;smtp.provedo.com.br&#39;</span>
+<span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="s1">&#39;email@provedor.com.br&#39;</span>
+<span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;senha&#39;</span>
+<span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">587</span>
+<span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</td></tr></table>
+
+<p>Se tudo estiver correto, podemos rodar as migrações e iniciar nosso projeto <code>python manage.py migrate</code> e <code>python manage.py runserver 0.0.0.0:8000</code></p>
+<p>Após isso, precisamos criar um usuario padrão, para podemos acessar nossa administração. Para isso, iremos utilizar o comando <code>python manage.py createsuperuser</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Username <span class="o">(</span>leave blank to use <span class="s1">&#39;wgalleti&#39;</span><span class="o">)</span>: admin
+Email address: admin@admin.com
+Password: 
+Password <span class="o">(</span>again<span class="o">)</span>: 
+Superuser created successfully.
+</pre></div>
+</td></tr></table>
+
+<h3 id="configuracoes-do-heroku">Configurações do Heroku:<a class="headerlink" href="#configuracoes-do-heroku" title="Permanent link">&para;</a></h3>
+<p>Feito isso, vamos adicionar algumas estruturas do HEROKU (aws):</p>
+<p>Para isso, vamos precisar criar o app no heroku, criar os arquivos Procfile, runtime.txt.</p>
+<p>Primeiro, precisamos informar quem vai servir os arquivos staticos no heroku, por isso utilizamos o módulo <code>dj-static</code>. Para isso, abra o arquivo <code>wsgi.py</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">dj_static</span> <span class="kn">import</span> <span class="n">Cling</span>
+
+<span class="kn">from</span> <span class="nn">django.core.wsgi</span> <span class="kn">import</span> <span class="n">get_wsgi_application</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;DJANGO_SETTINGS_MODULE&quot;</span><span class="p">,</span> <span class="s2">&quot;atividades.settings&quot;</span><span class="p">)</span>
+
+<span class="n">application</span> <span class="o">=</span> <span class="n">Cling</span><span class="p">(</span><span class="n">get_wsgi_application</span><span class="p">())</span>
+</pre></div>
+</td></tr></table>
+
+<p>Agora, vamos criar o arquivo <code>Procfile</code>, que informa ao heroku como que as coisas vão acontecer:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>web: gunicorn %nomeprojeto.wsgi --log-file -
+</pre></div>
+</td></tr></table>
+
+<p>Agora, camos criar o arquivo <code>runtime.txt</code>, que informa qual versão do python vamos utilizar:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python-3.5.2
+</pre></div>
+</td></tr></table>
+
+<p>Feito isso, vamos preparar o git.</p>
+<p>Primeiro, iniciamos o repositório com o comando <code>git init</code> e depois vamos criar o arquivo <code>.gitignore</code>, para não enviarmos alguns arquivos.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>.DS_Store
+.env
+.idea
+.venv
+*.sqlite3
+*pyc
+__pycache__
+</pre></div>
+</td></tr></table>
+
+<p>Feito isso, vamos comitar os arquivos. Primeiro enviamos o .gitignore</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git add .gitignore
+git commit -m &quot;Add ignore config&quot;
+</pre></div>
+</td></tr></table>
+
+<p>Agora vamos enviar os arquivos de configuração do heroku</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git add Procfile runtime.txt
+git commit -m &quot;Heroku config&quot;
+</pre></div>
+</td></tr></table>
+
+<p>Agora, vamos importar o restante dos arquivos</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git add .
+git commit -m &quot;Import project&quot;
+</pre></div>
+</td></tr></table>
+
+<h3 id="criando-projeto-no-heroku">Criando projeto no Heroku<a class="headerlink" href="#criando-projeto-no-heroku" title="Permanent link">&para;</a></h3>
+<p>Agora, vamos ao Heroku.</p>
+<p>Nessa etapa, precisamos criar o app, configurar as variaveis, e enviar os arquivos.</p>
+<p>Antes de começar, instale o heroku client para utilizar os comandos.</p>
+<p>Vamos criar e configurar o app:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>heroku create %nomeprojeto --buildpack heroku/python
+heroku config:set <span class="nv">SECRET_KEY</span><span class="o">=</span><span class="s1">&#39;CHAVE QUE ESTA NO .env&#39;</span>
+heroku config:set <span class="nv">DEBUG</span><span class="o">=</span>False
+</pre></div>
+</td></tr></table>
+
+<p>Feito isso, vamos enviar o projeto</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git push heroku master
+</pre></div>
+</td></tr></table>
+
+<p>Pronto, projeto no ar!!!</p>
+<h3 id="conclusao">Conclusão<a class="headerlink" href="#conclusao" title="Permanent link">&para;</a></h3>
+<p>Para finalizar, precisamos informar a conexão do banco de dados. Para isso, crie a variavel <code>DATABASE_URL</code> e defina o valor que esta no site, pois o heroku criou um novo datastore para essa aplicação.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>heroku config:set <span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://...
+</pre></div>
+</td></tr></table>
+
+<p>Após isso, vamos rodar as migrações e criar o usuario admin:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>heroku run python manage.py migrate
+heroku run python manage.py createsuperuser
+</pre></div>
+</td></tr></table>
+
+<h2 id="agradecimento">Agradecimento<a class="headerlink" href="#agradecimento" title="Permanent link">&para;</a></h2>
+<p>Feito isso, só utilizar eu app e desfrutar das funcionalidades do heroku! Valeu e até o proximo!</p>
+<p>Agradecimentos especiais:</p>
+<ul>
+<li>Alessandro Folk</li>
+<li>Doc do Heroku</li>
+<li>Doc do Django</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../server/ubuntu_apache/" title="Ubuntu Apache" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Ubuntu Apache
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../rest_framework/" title="Rest Framework" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Rest Framework
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © 2017 wGalleti
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/wGalleti" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/wGalleti" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/william-galleti-6b97a833/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application-c35428f87f.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
