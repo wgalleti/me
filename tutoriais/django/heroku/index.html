@@ -18,7 +18,7 @@
       
         <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.4">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.3">
     
     
       
@@ -26,12 +26,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr-1df76c4e58.js"></script>
+      <script src="../../../assets/javascripts/modernizr-e826f8942a.js"></script>
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application-769c285a91.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-9011e2d3f8.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-02c2a4388f.palette.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-23f75ab9c7.palette.css">
       
     
     
@@ -67,10 +67,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <a href="http://wGalleti.io/docs" title="wGalletiDocs" class="md-icon md-icon--home md-header-nav__button">
-          </a>
-        
+        <a href="http://wGalleti.io/docs" title="wGalletiDocs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon md-icon--home"></i>
+          
+        </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
@@ -97,17 +98,17 @@
         
           <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
-<div class="md-search" data-md-component="search">
+<div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="search"></label>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
       <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -125,6 +126,7 @@
 </header>
     
     <div class="md-container">
+      
       
       
         
@@ -177,9 +179,11 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="drawer">
-    
-      <i class="md-icon md-icon--home md-nav__button"></i>
-    
+    <div class="md-nav__button md-logo">
+      
+        <i class="md-icon md-icon--home"></i>
+      
+    </div>
     wGalletiDocs
   </label>
   
@@ -610,19 +614,18 @@
 <h2 id="preparacao-do-ambiente">Preparação do ambiente<a class="headerlink" href="#preparacao-do-ambiente" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Utilizando python 3.5.2</p>
+<p>Utilizando python 3.6.2</p>
 </div>
 <ol>
 <li>Crie o diretorio para o projeto e entre no mesmo <code>mkdir %nomeprojeto &amp; cd $_</code></li>
 <li>Criar o ambiente virtual <code>python -m venv .venv</code></li>
 <li>Ativar ambiente <code>source .venv/bin/activate</code></li>
-<li>Atualizar pip <code>pip install --upgrade pip</code></li>
 <li>Instalar dependencias <code>pip install django dj-database-url dj-static python-decouple gunicorn psycopg2</code></li>
 </ol>
 <h3 id="detalhando-as-dependencias">Detalhando as dependências<a class="headerlink" href="#detalhando-as-dependencias" title="Permanent link">&para;</a></h3>
 <ul>
-<li>django: Framework para desenvolvimento web</li>
-<li>dj-database-url: Módulo para converter string de conexão em url</li>
+<li>django: MAGIC</li>
+<li>dj-database-url: Módulo para converter url em dicionario de conexão</li>
 <li>dj-static: Módulo para servir arquivos estáticos</li>
 <li>python-decouple: Módulo que ajuda na parte de seguraça da aplicação (utilizar parametros via arquivo .env)</li>
 <li>gunicorn: Servidor web</li>
@@ -630,17 +633,18 @@
 </ul>
 <h2 id="inicando-o-projeto">Inicando o projeto<a class="headerlink" href="#inicando-o-projeto" title="Permanent link">&para;</a></h2>
 <p>Após o ambiente preparado, vamos iniciar o projeto.<br />
-Primeiro, vamos salvar os módulos que nosso projeto necessita:<br />
-<code>pip freeze &gt; requirements.txt</code></p>
-<p>Após isso, vamos criar nosso projeto:<br />
-<code>django-admin startproject %nomeprojeto .</code></p>
+Primeiro, vamos salvar os módulos que nosso projeto necessita:</p>
+<p><code>pip freeze &gt; requirements.txt</code></p>
+<p>Após isso, vamos criar nosso projeto:</p>
+<p><code>django-admin startproject %nomeprojeto .</code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Utilizo o ponto para não criar subpasta no projeto!!!</p>
 </div>
 <h3 id="configuracoes-do-projeto">Configurações do Projeto:<a class="headerlink" href="#configuracoes-do-projeto" title="Permanent link">&para;</a></h3>
 <p>Primeiro, vamos ao arquivo <code>settings.py</code>. Nele, iremos informar as chaves do projeto, conexão de banco de dados, caminhos, etc.</p>
-<p>Para aumentar a segurança, e remover desse arquivo dados de senha e chave, vamos utilizar o decouple. Para isso vamos criar o arquivo <code>.env</code> na raiz do projeto.</p>
+<p>Para aumentar a segurança, e remover desse arquivo dados de senha e chave, vamos utilizar o python-decouple.<br />
+Para isso vamos criar o arquivo <code>.env</code> na raiz do projeto.</p>
 <p>Nele vamos informar os seguintes itens:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SECRET_KEY=***********************************(Copiar do seu settings.py)
@@ -664,15 +668,17 @@ DEBUG=True
 <span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">config</span><span class="p">(</span><span class="s1">&#39;SECRET_KEY&#39;</span><span class="p">)</span>
 
 <span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
-<span class="n">DEBUG</span> <span class="o">=</span> <span class="n">DEBUG</span> <span class="o">=</span> <span class="n">config</span><span class="p">(</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">cast</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="n">config</span><span class="p">(</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">cast</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <p>Em desenvolvimento, vamos usar o <code>sqlite</code>, então para configurá-lo, vamos criar uma variável, passando o valor padrão para caso não houver informações de conexão no arquivo <code>.env</code></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Database</span>
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Database</span>
 <span class="c1"># https://docs.djangoproject.com/en/1.10/ref/settings/#databases</span>
+
 <span class="n">default_db_url</span> <span class="o">=</span> <span class="s1">&#39;sqlite:///&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;db.sqlite3&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
@@ -687,18 +693,14 @@ DEBUG=True
 </td></tr></table>
 
 <p>Agora vamos efetuar algumas outras configurações importantes como hosts permitidos para acessar, linguagem, timezone, local dos arquivos staticos e etc.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># hosts</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># hosts</span>
 <span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;*&#39;</span>
 <span class="p">]</span>
@@ -706,44 +708,30 @@ DEBUG=True
 <span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;pt-br&#39;</span>
 <span class="c1"># timestamp</span>
 <span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;America/Cuiaba&#39;</span>
-<span class="c1"># desativa timezone</span>
-<span class="n">USE_TZ</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="c1"># diretorio de arquivos staticos</span>
+</pre></div>
+</td></tr></table>
+
+<p>É importante também configurar onde ficarão os arquivos estático</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Static files (CSS, JavaScript, Images)</span>
+<span class="c1"># https://docs.djangoproject.com/en/1.11/howto/static-files/</span>
+
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;/static/&#39;</span>
 <span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;staticfiles&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
-<p>Por ultimo, vamos informar as configurações de email:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Email</span>
-<span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="s1">&#39;smtp.provedo.com.br&#39;</span>
-<span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="s1">&#39;email@provedor.com.br&#39;</span>
-<span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;senha&#39;</span>
-<span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">587</span>
-<span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="bp">False</span>
-</pre></div>
-</td></tr></table>
-
 <p>Se tudo estiver correto, podemos rodar as migrações e iniciar nosso projeto <code>python manage.py migrate</code> e <code>python manage.py runserver 0.0.0.0:8000</code></p>
-<p>Após isso, precisamos criar um usuario padrão, para podemos acessar nossa administração. Para isso, iremos utilizar o comando <code>python manage.py createsuperuser</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Username <span class="o">(</span>leave blank to use <span class="s1">&#39;wgalleti&#39;</span><span class="o">)</span>: admin
-Email address: admin@admin.com
-Password: 
-Password <span class="o">(</span>again<span class="o">)</span>: 
-Superuser created successfully.
-</pre></div>
-</td></tr></table>
-
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Se estiver no Unix, podemos criar um alias para facilitar a vida <code>alias manage='python $VIRTUAL_ENV/../manage.py'</code> e usar o comando <code>manage migrate</code> e <code>manage runserver</code>
+No windows, crie um arquivo manage.bat em .venv\scritps com o seguinte conteúdo <code>@python &quot;%VIRTUAL_ENV%\..\manage.py&quot; %*</code> </p>
+</div>
 <h3 id="configuracoes-do-heroku">Configurações do Heroku:<a class="headerlink" href="#configuracoes-do-heroku" title="Permanent link">&para;</a></h3>
-<p>Feito isso, vamos adicionar algumas estruturas do HEROKU (aws):</p>
+<p>Feito isso, vamos adicionar algumas estruturas do HEROKU:</p>
 <p>Para isso, vamos precisar criar o app no heroku, criar os arquivos Procfile, runtime.txt.</p>
 <p>Primeiro, precisamos informar quem vai servir os arquivos staticos no heroku, por isso utilizamos o módulo <code>dj-static</code>. Para isso, abra o arquivo <code>wsgi.py</code>:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -770,7 +758,7 @@ Superuser created successfully.
 </td></tr></table>
 
 <p>Agora, camos criar o arquivo <code>runtime.txt</code>, que informa qual versão do python vamos utilizar:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python-3.5.2
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python-3.6.2
 </pre></div>
 </td></tr></table>
 
@@ -799,13 +787,6 @@ git commit -m &quot;Add ignore config&quot;
 </pre></div>
 </td></tr></table>
 
-<p>Agora vamos enviar os arquivos de configuração do heroku</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git add Procfile runtime.txt
-git commit -m &quot;Heroku config&quot;
-</pre></div>
-</td></tr></table>
-
 <p>Agora, vamos importar o restante dos arquivos</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git add .
@@ -817,12 +798,20 @@ git commit -m &quot;Import project&quot;
 <p>Agora, vamos ao Heroku.</p>
 <p>Nessa etapa, precisamos criar o app, configurar as variaveis, e enviar os arquivos.</p>
 <p>Antes de começar, instale o heroku client para utilizar os comandos.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Caso tenha duvidas, siga <a href="https://devcenter.heroku.com/articles/heroku-cli">https://devcenter.heroku.com/articles/heroku-cli</a></p>
+</div>
 <p>Vamos criar e configurar o app:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>heroku create %nomeprojeto --buildpack heroku/python
-heroku config:set <span class="nv">SECRET_KEY</span><span class="o">=</span><span class="s1">&#39;CHAVE QUE ESTA NO .env&#39;</span>
-heroku config:set <span class="nv">DEBUG</span><span class="o">=</span>False
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>heroku create %nomeprojeto --buildpack heroku/python
+heroku addons:create heroku-postgresql:hobby-dev
+heroku pg:promote
+heroku plugins:install heroku-config
+heroku config:push
 </pre></div>
 </td></tr></table>
 
@@ -831,14 +820,9 @@ heroku config:set <span class="nv">DEBUG</span><span class="o">=</span>False
 </pre></div>
 </td></tr></table>
 
-<p>Pronto, projeto no ar!!!</p>
+<p>Caso, tudo correto, projeto no ar!!!</p>
 <h3 id="conclusao">Conclusão<a class="headerlink" href="#conclusao" title="Permanent link">&para;</a></h3>
-<p>Para finalizar, precisamos informar a conexão do banco de dados. Para isso, crie a variavel <code>DATABASE_URL</code> e defina o valor que esta no site, pois o heroku criou um novo datastore para essa aplicação.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>heroku config:set <span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://...
-</pre></div>
-</td></tr></table>
-
-<p>Após isso, vamos rodar as migrações e criar o usuario admin:</p>
+<p>Para finalizar, precisamos rodar as migrações e criar o usuario admin:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>heroku run python manage.py migrate
 heroku run python manage.py createsuperuser
@@ -846,9 +830,10 @@ heroku run python manage.py createsuperuser
 </td></tr></table>
 
 <h2 id="agradecimento">Agradecimento<a class="headerlink" href="#agradecimento" title="Permanent link">&para;</a></h2>
-<p>Feito isso, só utilizar eu app e desfrutar das funcionalidades do heroku! Valeu e até o proximo!</p>
+<p>Feito isso, só utilizar eu app e desfrutar das funcionalidades do heroku! Valeu!</p>
 <p>Agradecimentos especiais:</p>
 <ul>
+<li>Henrique Bastos (<a href="https://welcometothedjango.com.br/">https://welcometothedjango.com.br/</a>)</li>
 <li>Alessandro Folk</li>
 <li>Doc do Heroku</li>
 <li>Doc do Django</li>
@@ -938,7 +923,7 @@ heroku run python manage.py createsuperuser
       
     </div>
     
-      <script src="../../../assets/javascripts/application-c35428f87f.js"></script>
+      <script src="../../../assets/javascripts/application-f3ab9e5ff8.js"></script>
       
       
       <script>app.initialize({url:{base:"../../.."}})</script>
