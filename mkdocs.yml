@@ -71,6 +71,7 @@ pages:
       - 'Projeto Heroku': 'tutoriais/django/heroku.md'
       - 'Rest Framework': 'tutoriais/django/rest_framework.md'
       - 'Queries': 'tutoriais/django/queries.md'
+      - 'Ldap Windows': 'tutoriais/django/ldap.md'
       # - 'JET Admin': 'tutoriais/django/jet_admin.md'
     # - 'AngularJS': 
     #   - 'Snippets Sublime': 'tutoriais/angularjs/snippets_sublime.md'
