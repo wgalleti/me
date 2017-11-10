@@ -44,7 +44,7 @@ AUTHENTICATION_BACKENDS = (
 
 Caso as informações de conexão acima estiverem corretas, basta logar com o usuário do LDAP na sua aplicação
 
-*OBS:* Caso tentar logar no admin, vai receber um aviso de falta de permissão. Quando o ldap recebe o usuário, ele vem sem permissões. Para promover o usuário, utilize o comando `python manage.py ldap_promote NOMEDOUSUARIO`
+*OBS:* Caso tentar logar no admin, vai receber um aviso de falta de permissão. Quando o ldap recebe o usuário, ele vem sem permissões. Para promover o usuário, utilize o comando `python manage.py ldap_promote NOMEDOUSUARIO`  
 *OBS2:* Caso queira receber todos os usuários (Não recomendo), execute o comando `python manage.py ldap_sync_users`
 
 ## Referências
