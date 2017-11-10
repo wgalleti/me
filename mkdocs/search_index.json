@@ -344,6 +344,36 @@
             "location": "/tutoriais/django/queries/#filtros",
             "text": "Express\u00e3o  Resultado      a__exact=value  Combina\u00e7\u00e3o exata    a__exact=None  IS NULL    x__iexact=value  Combina\u00e7\u00e3o string ignorando mai\u00fascula e min\u00fascula    a__isnull=True  IS NULL    a__isnull=False  IS NOT NULL    a__contains=value  Cont\u00e9m na string    a__icontains=value  Cont\u00e9m na string ignorando mai\u00fascula e min\u00fascula    a__contains=value  Combina\u00e7\u00e3o exata    a__exact=value  Combina\u00e7\u00e3o exata",
             "title": "Filtros"
+        },
+        {
+            "location": "/tutoriais/django/ldap/",
+            "text": "Vamos conectar ao dominio \nwilliamgalleti.com\n\u00b6\n\n\nInstala\u00e7\u00e3o\n\u00b6\n\n\n1\npip\n \ninstall\n \ndjango\n-\npython3\n-\nldap\n\n\n\n\n\n\n\nSettings\n\u00b6\n\n\nEdite o arquivo settings.py e:\n* Adicione em \nINSTALLED_APPS\n \n'django_python3_ldap',\n\n* Adicione as Seguintes vari\u00e1veis\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n# Ldap Autentication\n\n\nLDAP_AUTH_URL\n \n=\n \n'ldap://192.168.0.10'\n\n\nLDAP_AUTH_USE_TLS\n \n=\n \nFalse\n\n\nLDAP_AUTH_SEARCH_BASE\n \n=\n \n'dc=williamgalleti,dc=com'\n\n\nLDAP_AUTH_OBJECT_CLASS\n \n=\n \n'person'\n\n\nLDAP_AUTH_USER_FIELDS\n \n=\n \n{\n\n    \n'username'\n:\n \n'sAMAccountName'\n,\n\n    \n'first_name'\n:\n \n'givenName'\n,\n\n    \n'last_name'\n:\n \n'sn'\n,\n\n    \n'email'\n:\n \n'mail'\n,\n\n\n}\n\n\nLDAP_AUTH_USER_LOOKUP_FIELDS\n \n=\n \n(\n'username'\n,)\n\n\nLDAP_AUTH_CLEAN_USER_DATA\n \n=\n \n'django_python3_ldap.utils.clean_user_data'\n\n\nLDAP_AUTH_SYNC_USER_RELATIONS\n \n=\n \n'django_python3_ldap.utils.sync_user_relations'\n\n\nLDAP_AUTH_FORMAT_SEARCH_FILTERS\n \n=\n \n'django_python3_ldap.utils.format_search_filters'\n\n\nLDAP_AUTH_FORMAT_USERNAME\n \n=\n \n'django_python3_ldap.utils.format_username_active_directory'\n\n\nLDAP_AUTH_ACTIVE_DIRECTORY_DOMAIN\n \n=\n \n'WILLIAMGALLETI'\n\n\nLDAP_AUTH_CONNECTION_USERNAME\n \n=\n \n'usuario'\n\n\n\n\n\n* Ajustar o django para encontrar a autentica\u00e7\u00e3o pelo LDAP. Adicione a tupla:\n\n1\n2\n3\n4\n5\n# Autentica\u00e7\u00f5es\nAUTHENTICATION_BACKENDS = (\n    'django.contrib.auth.backends.ModelBackend',\n    'django_python3_ldap.auth.LDAPBackend',\n)\n\n\n\n\n\nConclus\u00e3o\n\u00b6\n\n\nCaso as informa\u00e7\u00f5es de conex\u00e3o acima estiverem corretas, basta logar com o usu\u00e1rio do LDAP na sua aplica\u00e7\u00e3o\n\n\nOBS:\n Caso tentar logar no admin, vai receber um aviso de falta de permiss\u00e3o. Quando o ldap recebe o usu\u00e1rio, ele vem sem permiss\u00f5es. Para promover o usu\u00e1rio, utilize o comando \npython manage.py ldap_promote NOMEDOUSUARIO\n\n\nOBS2:\n Caso queira receber todos os usu\u00e1rios (N\u00e3o recomendo), execute o comando \npython manage.py ldap_sync_users\n\n\nRefer\u00eancias\n\u00b6\n\n\nhttps://github.com/etianen/django-python3-ldap",
+            "title": "Ldap Windows"
+        },
+        {
+            "location": "/tutoriais/django/ldap/#vamos-conectar-ao-dominio-williamgalleticom",
+            "text": "",
+            "title": "Vamos conectar ao dominio williamgalleti.com"
+        },
+        {
+            "location": "/tutoriais/django/ldap/#instalacao",
+            "text": "1 pip   install   django - python3 - ldap",
+            "title": "Instala\u00e7\u00e3o"
+        },
+        {
+            "location": "/tutoriais/django/ldap/#settings",
+            "text": "Edite o arquivo settings.py e:\n* Adicione em  INSTALLED_APPS   'django_python3_ldap', \n* Adicione as Seguintes vari\u00e1veis  1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18 # Ldap Autentication  LDAP_AUTH_URL   =   'ldap://192.168.0.10'  LDAP_AUTH_USE_TLS   =   False  LDAP_AUTH_SEARCH_BASE   =   'dc=williamgalleti,dc=com'  LDAP_AUTH_OBJECT_CLASS   =   'person'  LDAP_AUTH_USER_FIELDS   =   { \n     'username' :   'sAMAccountName' , \n     'first_name' :   'givenName' , \n     'last_name' :   'sn' , \n     'email' :   'mail' ,  }  LDAP_AUTH_USER_LOOKUP_FIELDS   =   ( 'username' ,)  LDAP_AUTH_CLEAN_USER_DATA   =   'django_python3_ldap.utils.clean_user_data'  LDAP_AUTH_SYNC_USER_RELATIONS   =   'django_python3_ldap.utils.sync_user_relations'  LDAP_AUTH_FORMAT_SEARCH_FILTERS   =   'django_python3_ldap.utils.format_search_filters'  LDAP_AUTH_FORMAT_USERNAME   =   'django_python3_ldap.utils.format_username_active_directory'  LDAP_AUTH_ACTIVE_DIRECTORY_DOMAIN   =   'WILLIAMGALLETI'  LDAP_AUTH_CONNECTION_USERNAME   =   'usuario'   \n* Ajustar o django para encontrar a autentica\u00e7\u00e3o pelo LDAP. Adicione a tupla: 1\n2\n3\n4\n5 # Autentica\u00e7\u00f5es\nAUTHENTICATION_BACKENDS = (\n    'django.contrib.auth.backends.ModelBackend',\n    'django_python3_ldap.auth.LDAPBackend',\n)",
+            "title": "Settings"
+        },
+        {
+            "location": "/tutoriais/django/ldap/#conclusao",
+            "text": "Caso as informa\u00e7\u00f5es de conex\u00e3o acima estiverem corretas, basta logar com o usu\u00e1rio do LDAP na sua aplica\u00e7\u00e3o  OBS:  Caso tentar logar no admin, vai receber um aviso de falta de permiss\u00e3o. Quando o ldap recebe o usu\u00e1rio, ele vem sem permiss\u00f5es. Para promover o usu\u00e1rio, utilize o comando  python manage.py ldap_promote NOMEDOUSUARIO  OBS2:  Caso queira receber todos os usu\u00e1rios (N\u00e3o recomendo), execute o comando  python manage.py ldap_sync_users",
+            "title": "Conclus\u00e3o"
+        },
+        {
+            "location": "/tutoriais/django/ldap/#referencias",
+            "text": "https://github.com/etianen/django-python3-ldap",
+            "title": "Refer\u00eancias"
         }
     ]
 }
