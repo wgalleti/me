@@ -1,26 +1,34 @@
 # Informações do Projeto
-site_name: wGalletiDocs
-site_description: 'William Galleti Docs'
+site_name: wGalleti
+site_description: 'Uteis de wGalleti'
 site_author: 'William Galleti'
-site_url: 'http://wGalleti.io/docs'
+site_url: 'https://medocs.disqus.com'
 
 # Documentos e Temas
 docs_dir: 'docs'
-theme : 'material'
 
 # Copyright
 copyright: '© 2017 wGalleti'
 
-# Opções
-extra:
+theme:
+  name: 'material'
+  language: 'pt'
   palette:
-    primary: 'indigo'
-    accent: 'light blue'
+    primary: 'red'
+    accent: 'orange'
   font:
     text: 'Ubuntu'
     code: 'Ubuntu Mono'
+  logo:
+    icon: 'cloud'
   feature:
     tabs: true
+
+# Opções
+extra:
+  disqus: 'mkdocs-material'
+  search:
+    tokenizer: '[\s\-\.]+'
   social:
     - type: 'github'
       link: 'https://github.com/wGalleti'
@@ -53,31 +61,19 @@ markdown_extensions:
 # Paginas
 pages:
   - 'Home': 'index.md'
-  # - 'Sobre' : 'sobre.md'
-  # - 'Estudos':
-  #   - 'Python': 'estudos/python.md'
-  #   - 'Django': 'estudos/django.md'
-  #   - 'AngularJS': 'estudos/angularjs.md'
-  #   - 'Angular': 'estudos/angular.md'
-  - 'Tutoriais':
-    - 'JS':
-      - 'Arrays Uteis': 'tutoriais/javascript/arrays.md'
-    - 'Angular':
-      - 'Coisas uteis': 'tutoriais/angular/index.md'
-    - 'Django':
-      - 'Server':
-        - 'Ubuntu Nginx': 'tutoriais/django/server/ubuntu_nginx.md'
-        - 'Ubuntu Apache': 'tutoriais/django/server/ubuntu_apache.md'
-      - 'Projeto Heroku': 'tutoriais/django/heroku.md'
-      - 'Rest Framework': 'tutoriais/django/rest_framework.md'
-      - 'Queries': 'tutoriais/django/queries.md'
-      # - 'JET Admin': 'tutoriais/django/jet_admin.md'
-    # - 'AngularJS': 
-    #   - 'Snippets Sublime': 'tutoriais/angularjs/snippets_sublime.md'
-    #   - 'Snippets VSCode': 'tutoriais/angularjs/snippets_vscode.md'
-    #   - 'UI - Router': 'tutoriais/angularjs/ui_router.md'
-    # - 'Oracle':
-    #   - 'Backup': 'tutoriais/oracle/backup.md'
-    #   - 'Import': 'tutoriais/oracle/import.md'
-    #   - 'Connect': 'tutoriais/oracle/connect.md'
+  - 'Servidores':
+    - 'Nginx':
+        - 'Python': 'servidores/nginx/python.md'
+        - 'PHP': 'servidores/nginx/php.md'
+    - 'Apache':
+        - 'Python': 'servidores/apache/python.md'
 
+  - 'Desenvolvimento':
+
+    
+    - 'Python/Django':
+      - 'Projeto Heroku': 'desenvolvimento/pythondjango/heroku.md'
+      - 'Rest Framework': 'desenvolvimento/pythondjango/rest_framework.md'
+      - 'Queries': 'desenvolvimento/pythondjango/queries.md'
+      - 'Ldap Windows': 'desenvolvimento/pythondjango/ldap.md'
+    
