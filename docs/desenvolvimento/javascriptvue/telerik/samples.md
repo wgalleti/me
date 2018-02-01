@@ -75,9 +75,9 @@ Código:
 
 <script>
 export default {
-  data () {
-    return {
-      cancelarCmd: {
+  computed: {
+    cancelarCmd () {
+      return {
         name: 'cancelar',
         text: ' ',
         className: 'k-button-icon',
@@ -85,8 +85,10 @@ export default {
           e.preventDefault()
           console.log(e)
         }
-      },
-      resolverCmd: {
+      }
+    },
+    resolverCmd () {
+      return {
         name: 'resolver',
         text: ' ',
         className: 'k-button-icon',
@@ -95,9 +97,7 @@ export default {
           console.log(e)
         }
       }
-    }
-  },    
-  computed: {
+    },      
     dataSource () {
       return new kendo.data.DataSource({
         transport: {
