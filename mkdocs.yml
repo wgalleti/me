@@ -79,4 +79,5 @@ pages:
     - 'JavaScript/Vue':
       - 'Telerik':
         - 'StartProject': 'desenvolvimento/javascriptvue/telerik/startproject.md'
+        - 'Samples': 'desenvolvimento/javascriptvue/telerik/samples.md'
     
