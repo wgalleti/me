@@ -67,10 +67,10 @@ pages:
         - 'PHP': 'servidores/nginx/php.md'
     - 'Apache':
         - 'Python': 'servidores/apache/python.md'
-
+  - 'Oracle':
+    - 'PL/SQL':
+      - 'uteis': 'oracle/plsql/uteis.md'
   - 'Desenvolvimento':
-
-    
     - 'Python/Django':
       - 'Projeto Heroku': 'desenvolvimento/pythondjango/heroku.md'
       - 'Rest Framework': 'desenvolvimento/pythondjango/rest_framework.md'
