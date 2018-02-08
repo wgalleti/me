@@ -4,7 +4,7 @@
     
     <url>
      <loc>https://medocs.disqus.com/</loc>
-     <lastmod>2018-02-01</lastmod>
+     <lastmod>2018-02-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -16,6 +16,16 @@
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>https://medocs.disqus.com</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
         
     <url>
      <loc>https://medocs.disqus.com</loc>
