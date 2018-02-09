@@ -157,13 +157,13 @@ sudo apt-get update
 Instalando o PHP
 
 ```bash
-sudo apt-get install php5.6 php5.6-dev php5.6-dev php5.6-fpm
+sudo apt-get install php5.6 php5.6-dev php5.6-dev php5.6-fpm php5.6-xml
 ```
 
 Vamos deixar o serviço do `fpm` para inicializar junto com o SO
 
 ```bash
-chkconfig php-fpm on
+sudo chkconfig php-fpm on
 ```
 
 Agora vamos instalar o oci8
