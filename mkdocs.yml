@@ -76,6 +76,7 @@ pages:
       - 'Rest Framework': 'desenvolvimento/pythondjango/rest_framework.md'
       - 'Queries': 'desenvolvimento/pythondjango/queries.md'
       - 'Ldap Windows': 'desenvolvimento/pythondjango/ldap.md'
+      - 'Celery': 'desenvolvimento/pythondjango/celery.md'
     - 'JavaScript/Vue':
       - 'Telerik':
         - 'StartProject': 'desenvolvimento/javascriptvue/telerik/startproject.md'
