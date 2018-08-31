@@ -64,6 +64,7 @@ pages:
   - 'Servidores':
     - 'Nginx':
         - 'Python': 'servidores/nginx/python.md'
+        - 'Scheffer': 'servidores/nginx/gruposcheffer.md'
         - 'PHP': 'servidores/nginx/php.md'
     - 'Apache':
         - 'Python': 'servidores/apache/python.md'
