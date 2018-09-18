@@ -290,6 +290,19 @@ PONG
 127.0.0.1:6379>
 ```
 
+#### Certbot
+
+Para colocar o certificado, vamos utilizar o CertBot
+
+```bash
+sudo apt install -y software-properties-common
+sudo add-apt-repository -y ppa:certbot/certbot
+sudo apt update
+sudo apt install -y python-certbot-nginx 
+sudo certbot --nginx
+sudo certbot renew --dry-run
+```
+
 ### Fontes
 
 - https://devanswers.co/installing-phpmyadmin-nginx-ubuntu-18-04/
