@@ -169,7 +169,7 @@ Agora, vamos criar um usuário para não utilizar o root:
 
 ```bash
 sudo mysql -u root
-> CREATE USER 'deploy'@'%' IDENTIFIED BY 'S3nh@2018';
+> CREATE USER 'deploy'@'%' IDENTIFIED BY '*****';
 > GRANT ALL PRIVILEGES ON * . * TO 'deploy'@'%';
 ```
 
