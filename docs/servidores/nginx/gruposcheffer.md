@@ -303,6 +303,25 @@ sudo certbot --nginx
 sudo certbot renew --dry-run
 ```
 
+#### Nmon
+
+Vamos instalar o monitor de hardware
+
+```bash
+sudo apt install nmon
+echo 'export NMON=cmd' >> ~/.profile
+source ~/.profile
+```
+
+#### VNC
+
+Para facilitar alguns acessos remotos, vamos instalar o VNC
+
+```bash
+sudo apt install xfce4 xfce4-goodies tightvncserver
+```
+
 ### Fontes
 
 - https://devanswers.co/installing-phpmyadmin-nginx-ubuntu-18-04/
+- https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04
