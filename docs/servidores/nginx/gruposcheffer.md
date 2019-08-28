@@ -169,8 +169,9 @@ Agora, vamos criar um usuário para não utilizar o root:
 
 ```bash
 sudo mysql -u root
-> CREATE USER 'deploy'@'%' IDENTIFIED BY '*****';
-> GRANT ALL PRIVILEGES ON * . * TO 'deploy'@'%';
+> CREATE USER 'developer'@'%' IDENTIFIED BY 'developer';
+> ALTER USER 'developer'@'%' IDENTIFIED WITH mysql_native_password BY 'developer';
+> GRANT ALL PRIVILEGES ON * . * TO 'developer'@'%';
 ```
 
 Para facilitar a administração do banco, vamos instalar o phpMyAdmin.
