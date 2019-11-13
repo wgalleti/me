@@ -41,8 +41,6 @@ extra:
 markdown_extensions:
   - admonition
   - codehilite
-  - toc(permalink=true)
-  - footnotes
 
 # Paginas
 pages:
